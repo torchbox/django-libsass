@@ -17,7 +17,7 @@ def get_include_paths():
         except AttributeError:
             continue
 
-        for storage in storages.itervalues():
+        for storage in storages.values():
             try:
                 include_paths.append(storage.path('.'))
             except NotImplementedError:
@@ -42,7 +42,7 @@ def compile(**kwargs):
 
 
 class SassCompiler(FilterBase):
-    def __init__(self, content, attrs=None, filter_type=None, filename=None):
+    def __init__(self, content, attrs=None, filter_type=None, charset=None, filename=None):
         # FilterBase doesn't handle being passed attrs, so fiddle the signature
         super(SassCompiler, self).__init__(content, filter_type, filename)
 
