@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2 (xx.xx.20xx)
+0.2 (22.05.2014)
 ~~~~~~~~~~~~~~~~
  * Made compatible with django-compressor 1.4 and Python 3.
 
