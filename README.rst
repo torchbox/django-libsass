@@ -38,6 +38,13 @@ possible to import files across different apps::
  @import "myotherapp/css/widget.scss"
 
 
+Source comments
+~~~~~~~~~~~~~~~
+
+SASS source comments (adds comments about source lines) are enabled when Django's DEBUG is
+enabled. This setting can be overridden with a LIBSASS_SOURCE_COMMENTS boolean setting.
+
+
 Why django-libsass?
 ~~~~~~~~~~~~~~~~~~~
 

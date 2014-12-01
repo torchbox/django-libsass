@@ -1,7 +1,11 @@
+from django.conf import settings
 from django.contrib.staticfiles.finders import get_finders
 
 import sass
 from compressor.filters.base import FilterBase
+
+SOURCE_COMMENTS = getattr(settings, 'LIBSASS_SOURCE_COMMENTS', settings.DEBUG)
+
 
 def get_include_paths():
     """
@@ -48,6 +52,6 @@ class SassCompiler(FilterBase):
 
     def input(self, **kwargs):
         if self.filename:
-            return compile(filename=self.filename)
+            return compile(filename=self.filename, source_comments=SOURCE_COMMENTS)
         else:
             return compile(string=self.content)
