@@ -39,10 +39,10 @@ possible to import files across different apps::
 
 
 Source comments
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 SASS source comments (adds comments about source lines) are enabled when Django's DEBUG is
-enabled. This settings can be override with a LIBSASS_SOURCE_COMMENTS boolean setting.
+enabled. This setting can be overridden with a LIBSASS_SOURCE_COMMENTS boolean setting.
 
 
 Why django-libsass?
