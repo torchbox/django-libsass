@@ -38,6 +38,13 @@ possible to import files across different apps::
  @import "myotherapp/css/widget.scss"
 
 
+Output styles
+~~~~~~~~~~~~~
+SASS output style can be configured with the LIBSASS_OUTPUT_STYLE setting.
+Options are 'nested', 'expanded', 'compact' and 'compressed'. Default is 'nested'.
+See `SASS documentation for output styles <http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style>`_
+
+
 Source comments
 ~~~~~~~~~~~~~~~
 

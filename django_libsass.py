@@ -4,6 +4,7 @@ from django.contrib.staticfiles.finders import get_finders
 import sass
 from compressor.filters.base import FilterBase
 
+OUTPUT_STYLE = getattr(settings, 'LIBSASS_OUTPUT_STYLE', 'nested')
 SOURCE_COMMENTS = getattr(settings, 'LIBSASS_SOURCE_COMMENTS', settings.DEBUG)
 
 
@@ -52,6 +53,10 @@ class SassCompiler(FilterBase):
 
     def input(self, **kwargs):
         if self.filename:
-            return compile(filename=self.filename, source_comments=SOURCE_COMMENTS)
+            return compile(filename=self.filename,
+                           output_style=OUTPUT_STYLE,
+                           source_comments=SOURCE_COMMENTS)
         else:
-            return compile(string=self.content)
+            return compile(string=self.content,
+                           output_style=OUTPUT_STYLE)
+
