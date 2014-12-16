@@ -44,7 +44,7 @@ Settings
 The following settings can be used to control django-libsass's behaviour:
 
 * ``LIBSASS_SOURCE_COMMENTS`` - whether to enable SASS source comments (adds comments about source lines). Defaults to ``True`` when Django's ``DEBUG`` is ``True``, ``False`` otherwise.
-* ``LIBSASS_OUTPUT_STYLE`` - SASS output style. Options are ``'nested'``, ``'expanded'``, ``'compact'`` and ``'compressed'``; default is 'nested'. See `SASS documentation for output styles <http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style>`_. Note that `django-compressor's settings <http://django-compressor.readthedocs.org/en/latest/settings/>`_ may also affect the formatting of the resulting CSS.
+* ``LIBSASS_OUTPUT_STYLE`` - SASS output style. Options are ``'nested'``, ``'expanded'``, ``'compact'`` and ``'compressed'``, although as of libsass 3.0.2 only ``'nested'`` and ``'compressed'`` are implemented. Default is 'nested'. See `SASS documentation for output styles <http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style>`_. Note that `django-compressor's settings <http://django-compressor.readthedocs.org/en/latest/settings/>`_ may also affect the formatting of the resulting CSS.
 
 
 Why django-libsass?
