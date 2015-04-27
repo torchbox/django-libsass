@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3 (xx.xx.20xx)
+0.3 (27.04.2015)
 ~~~~~~~~~~~~~~~~
  * Enabled source comments when DEBUG is True; can be overridden with the LIBSASS_SOURCE_COMMENTS setting
  * Added LIBSASS_OUTPUT_STYLE setting

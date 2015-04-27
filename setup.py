@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='django-libsass',
-    version='0.2',
+    version='0.3',
     description="A django-compressor filter to compile SASS files using libsass",
     author='Matt Westcott',
     author_email='matthew.westcott@torchbox.com',
@@ -16,7 +16,7 @@ setup(
     license='BSD',
     long_description=open('README.rst').read(),
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
