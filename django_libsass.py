@@ -54,10 +54,10 @@ def compile(**kwargs):
         INCLUDE_PATHS = get_include_paths()
 
     kwargs = kwargs.copy()
-    kwargs['include_paths'] = kwargs.get('include_paths', []) + INCLUDE_PATHS
+    kwargs['include_paths'] = (kwargs.get('include_paths') or []) + INCLUDE_PATHS
 
     custom_functions = CUSTOM_FUNCTIONS.copy()
-    custom_functions.update(kwargs.get('custom_functions', {}))
+    custom_functions.update(kwargs.get('custom_functions') or {}))
     kwargs['custom_functions'] = custom_functions
 
     return sass.compile(**kwargs)
