@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.4 (24.08.2015)
+~~~~~~~~~~~~~~~~
+ * Added support for custom functions (Alexandre Pocquet)
+ * Added a `static` function to generate paths to assets such as images and fonts (Alexandre Pocquet)
+
 0.3 (27.04.2015)
 ~~~~~~~~~~~~~~~~
  * Enabled source comments when DEBUG is True; can be overridden with the LIBSASS_SOURCE_COMMENTS setting
