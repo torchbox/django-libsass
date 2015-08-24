@@ -47,6 +47,7 @@ def get_include_paths():
 
 INCLUDE_PATHS = None  # populate this on first call to 'compile'
 
+
 def compile(**kwargs):
     """Perform sass.compile, but with the appropriate include_paths for Django added"""
     global INCLUDE_PATHS
@@ -54,7 +55,7 @@ def compile(**kwargs):
         INCLUDE_PATHS = get_include_paths()
 
     kwargs = kwargs.copy()
-    kwargs['include_paths'] = kwargs.get('include_paths', []) + INCLUDE_PATHS
+    kwargs['include_paths'] = (kwargs.get('include_paths') or []) + INCLUDE_PATHS
 
     custom_functions = CUSTOM_FUNCTIONS.copy()
     custom_functions.update(kwargs.get('custom_functions', {}))
