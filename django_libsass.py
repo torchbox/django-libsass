@@ -70,7 +70,7 @@ def prefix_sourcemap(sourcemap, prefix):
 
 def embed_sourcemap(output, sourcemap):
     encoded_sourcemap = base64.standard_b64encode(
-        bytes(sourcemap, 'utf-8')
+        sourcemap.encode('utf-8')
     )
     sourcemap_fragment = 'sourceMappingURL=data:application/json;base64,{} '\
         .format(encoded_sourcemap.decode('utf-8'))
