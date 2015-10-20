@@ -46,6 +46,8 @@ The following settings can be used to control django-libsass's behaviour:
 * ``LIBSASS_SOURCE_COMMENTS`` - whether to enable SASS source comments (adds comments about source lines). Defaults to ``True`` when Django's ``DEBUG`` is ``True``, ``False`` otherwise.
 * ``LIBSASS_OUTPUT_STYLE`` - SASS output style. Options are ``'nested'``, ``'expanded'``, ``'compact'`` and ``'compressed'``, although as of libsass 3.0.2 only ``'nested'`` and ``'compressed'`` are implemented. Default is 'nested'. See `SASS documentation for output styles <http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style>`_. Note that `django-compressor's settings <http://django-compressor.readthedocs.org/en/latest/settings/>`_ may also affect the formatting of the resulting CSS.
 * ``LIBSASS_CUSTOM_FUNCTIONS`` - A mapping of custom functions to be made available within the SASS compiler. By default, a ``static`` function is provided, analogous to Django's ``static`` template tag.
+* ``LIBSASS_SOURCEMAPS`` - Enable embedding sourcemaps into file output. ``LIBSASS_SOURCEMAP_PREFIX`` must also be set when sourcemaps are enabled.
+* ``LIBSASS_SOURCEMAP_PREFIX`` - URL prefix where your source files can be located, eg. ``/static/scss``. This option is needed to properly prefix source file links.
 
 Custom functions
 ~~~~~~~~~~~~~~~~
