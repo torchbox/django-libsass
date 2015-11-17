@@ -4,6 +4,7 @@ Changelog
 0.5 (xx.xx.xxxx)
 ~~~~~~~~~~~~~~~~
  * Added sourcemap support (Saulius Žemaitaitis)
+ * Updated the `static` function to use the more versatile django.contrib.staticfiles implementation (Carl Johnson)
 
 0.4 (24.08.2015)
 ~~~~~~~~~~~~~~~~
