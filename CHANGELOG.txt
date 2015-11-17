@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.5 (xx.xx.xxxx)
+~~~~~~~~~~~~~~~~
+ * Added sourcemap support (Saulius Žemaitaitis)
+
 0.4 (24.08.2015)
 ~~~~~~~~~~~~~~~~
  * Added support for custom functions (Alexandre Pocquet)
