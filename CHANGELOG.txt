@@ -1,9 +1,9 @@
 Changelog
 =========
 
-0.5-dev
--------
- * Added sourcemap support
+0.5 (xx.xx.xxxx)
+~~~~~~~~~~~~~~~~
+ * Added sourcemap support (Saulius Žemaitaitis)
 
 0.4 (24.08.2015)
 ~~~~~~~~~~~~~~~~
