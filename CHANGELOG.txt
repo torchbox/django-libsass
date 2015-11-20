@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.6 (xx.xx.xxxx)
+~~~~~~~~~~~~~~~~
+ * Fixed call to FilterBase super for django-compressor 1.6 compatibility (Dennis Vermeulen)
+
 0.5 (18.11.2015)
 ~~~~~~~~~~~~~~~~
  * Added sourcemap support (Saulius Žemaitaitis)
