@@ -126,7 +126,9 @@ def compile(**kwargs):
 class SassCompiler(FilterBase):
     def __init__(self, content, attrs=None, filter_type=None, charset=None, filename=None):
         # FilterBase doesn't handle being passed attrs, so fiddle the signature
-        super(SassCompiler, self).__init__(content, filter_type, filename)
+        super(SassCompiler, self).__init__(content=content,
+                                           filter_type=filter_type,
+                                           filename=filename)
 
     def input(self, **kwargs):
         if self.filename:
