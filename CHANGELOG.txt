@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.6-dev
+~~~~~~~~~~~~~~~~
+ * Fixed call to FilterBase super because they've added an additional parameter
+
 0.5 (18.11.2015)
 ~~~~~~~~~~~~~~~~
  * Added sourcemap support (Saulius Žemaitaitis)
