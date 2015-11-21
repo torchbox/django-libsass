@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.6 (xx.xx.xxxx)
+0.6 (21.11.2015)
 ~~~~~~~~~~~~~~~~
  * Fixed call to FilterBase super for django-compressor 1.6 compatibility (Dennis Vermeulen)
 
