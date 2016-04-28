@@ -23,6 +23,7 @@ OUTPUT_STYLE = getattr(settings, 'LIBSASS_OUTPUT_STYLE', 'nested')
 SOURCE_COMMENTS = getattr(settings, 'LIBSASS_SOURCE_COMMENTS', settings.DEBUG)
 CUSTOM_FUNCTIONS = getattr(settings, 'LIBSASS_CUSTOM_FUNCTIONS', {'static': static})
 SOURCEMAPS = getattr(settings, 'LIBSASS_SOURCEMAPS', False)
+PRECISION = getattr(settings, 'LIBSASS_PRECISION', None)  # None use libsass default
 
 
 INCLUDE_PATHS = None  # populate this on first call to 'get_include_paths'
@@ -102,6 +103,8 @@ def embed_sourcemap(output, sourcemap):
 def compile(**kwargs):
     """Perform sass.compile, but with the appropriate include_paths for Django added"""
     kwargs = kwargs.copy()
+    if PRECISION is not None:
+        kwargs['precision'] = PRECISION
     kwargs['include_paths'] = (kwargs.get('include_paths') or []) + get_include_paths()
 
     custom_functions = CUSTOM_FUNCTIONS.copy()

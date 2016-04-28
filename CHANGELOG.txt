@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.7 (xx.xx.xxxx)
+~~~~~~~~~~~~~~~~
+ * Added LIBSASS_PRECISION setting (Liang-Bo Wang)
+
 0.6 (21.11.2015)
 ~~~~~~~~~~~~~~~~
  * Fixed call to FilterBase super for django-compressor 1.6 compatibility (Dennis Vermeulen)
