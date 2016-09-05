@@ -133,3 +133,7 @@ STATICFILES_FINDERS = (
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
+
+LIBSASS_ADDITIONAL_INCLUDE_PATHS = [
+    os.path.join(BASE_DIR, 'tests', 'extra_static'),
+]

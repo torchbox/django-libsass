@@ -12,3 +12,7 @@ class TestSass(TestCase):
     def test_import(self):
         result = compile(filename=os.path.join(settings.BASE_DIR, 'tests', 'static', 'css', 'with_import.scss'))
         self.assertIn('.imported-style', result)
+
+    def test_extra_include_path(self):
+        result = compile(filename=os.path.join(settings.BASE_DIR, 'tests', 'static', 'css', 'with_extra_include.scss'))
+        self.assertIn('.extra-style', result)

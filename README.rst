@@ -48,6 +48,8 @@ The following settings can be used to control django-libsass's behaviour:
 * ``LIBSASS_CUSTOM_FUNCTIONS`` - A mapping of custom functions to be made available within the SASS compiler. By default, a ``static`` function is provided, analogous to Django's ``static`` template tag.
 * ``LIBSASS_SOURCEMAPS`` - Enable embedding sourcemaps into file output.
 * ``LIBSASS_PRECISION`` - Number of digits of numerical precision (default: 5)
+* ``LIBSASS_ADDITIONAL_INCLUDE_PATHS`` - a list of base paths to be recognised in @import lines, in addition to Django's recognised static file locations
+
 
 Custom functions
 ~~~~~~~~~~~~~~~~

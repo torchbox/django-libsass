@@ -5,6 +5,7 @@ Changelog
 ~~~~~~~~~~~~~~~~
  * Added Django 3.0 support (Tobias Kunze, Dan Kingston)
  * Included LICENSE file in distribution (Dougal J. Sutherland)
+ * Added LIBSASS_ADDITIONAL_INCLUDE_PATHS setting (Iwan Trofimtschuk)
 
 0.7 (02.05.2016)
 ~~~~~~~~~~~~~~~~
