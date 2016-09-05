@@ -24,6 +24,7 @@ SOURCE_COMMENTS = getattr(settings, 'LIBSASS_SOURCE_COMMENTS', settings.DEBUG)
 CUSTOM_FUNCTIONS = getattr(settings, 'LIBSASS_CUSTOM_FUNCTIONS', {'static': static})
 SOURCEMAPS = getattr(settings, 'LIBSASS_SOURCEMAPS', False)
 PRECISION = getattr(settings, 'LIBSASS_PRECISION', None)  # None use libsass default
+ADDITIONAL_INCLUDE_PATHS = getattr(settings, 'LIBSASS_ADDITIONAL_INCLUDE_PATHS', None)
 
 
 INCLUDE_PATHS = None  # populate this on first call to 'get_include_paths'
@@ -54,6 +55,10 @@ def get_include_paths():
                 # storages that do not implement 'path' do not store files locally,
                 # and thus cannot provide an include path
                 pass
+
+    global ADDITIONAL_INCLUDE_PATHS
+    if ADDITIONAL_INCLUDE_PATHS:
+        include_paths.extend(ADDITIONAL_INCLUDE_PATHS)
 
     INCLUDE_PATHS = include_paths
     return include_paths
