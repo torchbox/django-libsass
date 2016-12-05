@@ -54,6 +54,9 @@ def get_include_paths():
                 # storages that do not implement 'path' do not store files locally,
                 # and thus cannot provide an include path
                 pass
+    
+    if settings.STATIC_ROOT:
+        include_paths.append(settings.STATIC_ROOT)
 
     INCLUDE_PATHS = include_paths
     return include_paths
