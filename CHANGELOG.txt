@@ -4,6 +4,7 @@ Changelog
 0.8 (xx.xx.xxxx)
 ~~~~~~~~~~~~~~~~
  * Added Django 3.0 support (Tobias Kunze, Dan Kingston)
+ * Included LICENSE file in distribution (Dougal J. Sutherland)
 
 0.7 (02.05.2016)
 ~~~~~~~~~~~~~~~~
