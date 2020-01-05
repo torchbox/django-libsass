@@ -1,0 +1,13 @@
+{% load compress static %}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Hello django-libsass</title>
+        {% compress css %}
+            <link rel="stylesheet" type="text/x-scss" href="{% static "css/index.scss" %}" />
+        {% endcompress %}
+    </head>
+    <body>
+        <h1>It worked!</h1>
+    </body>
+</html>

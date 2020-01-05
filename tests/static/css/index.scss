@@ -1,0 +1,10 @@
+$background-color: #ddffdd;
+$foreground-color: #008800;
+
+body {
+    background-color: $background-color;
+
+    h1 {
+        color: $foreground-color;
+    }
+}
