@@ -1,3 +1,5 @@
+from __future__ import absolute_import, unicode_literals
+
 """hello_django_libsass URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,10 +15,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
+import django
 
 from tests.views import index
 
-urlpatterns = [
-    path('', index),
-]
+if django.VERSION >= (2, 0):
+    from django.urls import path
+
+    urlpatterns = [
+        path('', index),
+    ]
+else:
+    from django.conf.urls import url
+
+    urlpatterns = [
+        url('^$', index),
+    ]
