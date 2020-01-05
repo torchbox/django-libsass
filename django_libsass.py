@@ -2,9 +2,14 @@ import base64
 import json
 import re
 import os
+
+import django
 from django.conf import settings
 from django.contrib.staticfiles.finders import get_finders
-from django.contrib.staticfiles.templatetags.staticfiles import static as django_static
+if django.VERSION >= (1,10):
+    from django.templatetags import static as django_static
+else:
+    from django.contrib.staticfiles.templatetags.staticfiles import static as django_static
 
 import sass
 from compressor.filters.base import FilterBase
