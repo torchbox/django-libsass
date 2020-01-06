@@ -7,7 +7,7 @@ import django
 from django.conf import settings
 from django.contrib.staticfiles.finders import get_finders
 if django.VERSION >= (1,10):
-    from django.templatetags import static as django_static
+    from django.templatetags.static import static as django_static
 else:
     from django.contrib.staticfiles.templatetags.staticfiles import static as django_static
 

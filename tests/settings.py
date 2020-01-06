@@ -137,3 +137,4 @@ COMPRESS_PRECOMPILERS = (
 LIBSASS_ADDITIONAL_INCLUDE_PATHS = [
     os.path.join(BASE_DIR, 'tests', 'extra_static'),
 ]
+LIBSASS_SOURCEMAPS = True
