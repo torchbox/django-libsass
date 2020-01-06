@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.8 (xx.xx.xxxx)
+0.8 (06.01.2020)
 ~~~~~~~~~~~~~~~~
  * Added Django 3.0 support (Tobias Kunze, Dan Kingston)
  * Included LICENSE file in distribution (Dougal J. Sutherland)
