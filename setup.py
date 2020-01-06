@@ -36,6 +36,6 @@ setup(
     ],
     install_requires=[
         "django-compressor>=1.3",
-        "libsass>=0.7.0",
+        "libsass>=0.7.0,<1",
     ],
 )
