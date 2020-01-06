@@ -21,7 +21,7 @@ def static(path):
     usable as CSS url() argument. Sass equivalent of the 'static' template
     tag.
     """
-    return '"{}"'.format(django_static(path))
+    return django_static(path)
 
 
 OUTPUT_STYLE = getattr(settings, 'LIBSASS_OUTPUT_STYLE', 'nested')
