@@ -85,6 +85,15 @@ django-libsass builds on libsass-python to make @import paths aware of Django's 
 mechanism, and provides a filter module for django-compressor which uses the libsass-python API
 directly, avoiding the overheads of calling an external executable to do the compilation.
 
+
+Reporting bugs
+~~~~~~~~~~~~~~
+
+Please see the `troubleshooting <https://github.com/torchbox/django-libsass/wiki/Troubleshooting>`_ page for help with some common setup issues.
+
+I do not provide support for getting django-libsass working with your CSS framework of choice. If you believe you've found a bug, please try to isolate it as a minimal reproducible test case before reporting it - ideally this will consist of a few edits / additions to the `hello-django-libsass <https://github.com/gasman/hello-django-libsass>`_ example project. If you cannot demonstrate the problem in a few standalone SCSS files, it is almost certainly not a django-libsass bug - any bug reports that relate to a third-party CSS framework are likely to be closed without further investigation.
+
+
 Author
 ~~~~~~
 
