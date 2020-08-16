@@ -19,6 +19,8 @@ and add django_libsass.SassCompiler to your COMPRESS_PRECOMPILERS setting::
 You can now use the content type text/x-scss on your stylesheets, and have them
 compiled seamlessly into CSS::
 
+ {% load compress %}
+
  {% compress css %}
      <link rel="stylesheet" type="text/x-scss" href="{% static "myapp/css/main.scss" %}" />
  {% endcompress %}
