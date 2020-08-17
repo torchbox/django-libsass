@@ -10,11 +10,23 @@ Starting from a Django project with `django-compressor <https://github.com/djang
 
  pip install django-libsass
 
-and add django_libsass.SassCompiler to your COMPRESS_PRECOMPILERS setting::
+Add django_libsass.SassCompiler to your COMPRESS_PRECOMPILERS setting::
 
  COMPRESS_PRECOMPILERS = (
      ('text/x-scss', 'django_libsass.SassCompiler'),
  )
+
+Add into INSTALLED_APPS::
+
+  INSTALLED_APPS = [
+    'compressor',
+  ]
+
+Add into STATICFILES_FINDERS::
+
+    STATICFILES_FINDERS = [
+       'compressor.finders.CompressorFinder',
+    ]
 
 You can now use the content type text/x-scss on your stylesheets, and have them
 compiled seamlessly into CSS::
