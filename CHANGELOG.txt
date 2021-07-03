@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.9 (03.07.2021)
+~~~~~~~~~~~~~~~~
+ * Added django3.1 amd 3.2 support.
+ * Added tox and enable github actions for different django and python versions.
+
 0.8 (06.01.2020)
 ~~~~~~~~~~~~~~~~
  * Added Django 3.0 support (Tobias Kunze, Dan Kingston)
