@@ -45,6 +45,6 @@ setup(
     install_requires=[
         "django-compressor>=1.3",
         "libsass>=0.7.0,<1",
-        "django-appconf==1.0.3",
+        "django-appconf==1.0.3 ; python_version<'3'",
     ],
 )
