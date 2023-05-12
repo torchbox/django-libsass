@@ -77,7 +77,7 @@ pure Python implementations of Sass and Less, but we found that they invariably 
 behaviour of the reference compilers, either in their handling of @imports or lesser-used CSS
 features such as media queries.
 
-`libsass <http://libsass.org/>`_ is a mature C/C++ port of the Sass engine, co-developed by the
+`libsass <https://sass-lang.com/libsass>`_ is a mature C/C++ port of the Sass engine, co-developed by the
 original creator of Sass, and we can reasonably rely on it to stay in sync with the reference
 Sass compiler - and, being C/C++, it's fast. Thanks to Hong Minhee's
 `libsass-python <https://github.com/dahlia/libsass-python>`_ project, it has Python bindings and
