@@ -11,18 +11,26 @@ jobs:
     name: Python ${{ matrix.python-version }}, django ${{ matrix.django-version }}
     runs-on: ubuntu-latest
     strategy:
-      matrix:
-        python-version: [3.8, 3.9, "3.10", "3.11"]
-        django-version: [32, 41, 42]
+      matrix:  # https://docs.djangoproject.com/en/5.0/faq/install/#faq-python-version-support
+        django-version: [32, 41, 42, 50]
+        python-version: [3.8, 3.9, "3.10", 3.11, 3.12]
 
         exclude:
-          - python-version: 3.11
-            django-version: 32
+          - django-version: 32
+            python-version: 3.11
+          - django-version: 32
+            python-version: 3.12
+          - django-version: 41
+            python-version: 3.12
+          - django-version: 50
+            python-version: 3.8
+          - django-version: 50
+            python-version: 3.9
 
     steps:
       - uses: actions/checkout@v4
       - name: setup python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install tox
