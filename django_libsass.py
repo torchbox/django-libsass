@@ -1,18 +1,13 @@
 import base64
 import json
-import re
 import os
-
-import django
-from django.conf import settings
-from django.contrib.staticfiles.finders import get_finders
-if django.VERSION >= (1,10):
-    from django.templatetags.static import static as django_static
-else:
-    from django.contrib.staticfiles.templatetags.staticfiles import static as django_static
+import re
 
 import sass
 from compressor.filters.base import FilterBase
+from django.conf import settings
+from django.contrib.staticfiles.finders import get_finders
+from django.templatetags.static import static as django_static
 
 
 def static(path):
