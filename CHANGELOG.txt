@@ -1,6 +1,14 @@
 Changelog
 =========
 
+Unreleased
+~~~~~~~~~~~~~~~~
+
+* Added Django 4.1 & 4.2 support
+* Added Python 3.10 & 3.11 support
+* Drop support for Python 2.7, 3.4, 3.5, 3.6 & 3.7 (EOL)
+* Drop support for Django 1.8, 1.9, 1.10, 1.11, 2.2, 3.0 & 3.1 (EOL)
+
 0.9 (08.07.2021)
 ~~~~~~~~~~~~~~~~
  * Added Django 3.1 and 3.2 support (Awais Qureshi)
