@@ -12,12 +12,18 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:  # https://docs.djangoproject.com/en/5.0/faq/install/#faq-python-version-support
-        django-version: [42, 50]
-        python-version: [3.9, "3.10", 3.11, 3.12]
+        django-version: ["42", "50", "51"]
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
 
         exclude:
-          - django-version: 50
-            python-version: 3.9
+          - django-version: "42"
+            python-version: "3.13"
+          - django-version: "50"
+            python-version: "3.9"
+          - django-version: "50"
+            python-version: "3.13"
+          - django-version: "51"
+            python-version: "3.9"
 
     steps:
       - uses: actions/checkout@v4
