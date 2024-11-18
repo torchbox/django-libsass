@@ -12,18 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:  # https://docs.djangoproject.com/en/5.0/faq/install/#faq-python-version-support
-        django-version: [32, 41, 42, 50]
-        python-version: [3.8, 3.9, "3.10", 3.11, 3.12]
+        django-version: [42, 50]
+        python-version: [3.9, "3.10", 3.11, 3.12]
 
         exclude:
-          - django-version: 32
-            python-version: 3.11
-          - django-version: 32
-            python-version: 3.12
-          - django-version: 41
-            python-version: 3.12
-          - django-version: 50
-            python-version: 3.8
           - django-version: 50
             python-version: 3.9
 
