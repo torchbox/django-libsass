@@ -1,1 +1,4 @@
 include LICENSE
+include runtests.py
+include tox.ini
+recursive-include tests *
