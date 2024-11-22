@@ -30,6 +30,49 @@ ADDITIONAL_INCLUDE_PATHS = getattr(settings, 'LIBSASS_ADDITIONAL_INCLUDE_PATHS',
 INCLUDE_PATHS = None  # populate this on first call to 'get_include_paths'
 
 
+def importer(path, prev):
+    """
+    A callback for handling included files.
+    """
+    if path.startswith('/'):
+        # An absolute path was used, don't try relative paths.
+        candidates = [path[1:]]
+    elif prev == 'stdin':
+        # The parent is STDIN, so only try absolute paths.
+        candidates = [path]
+    else:
+        # Try both relative and absolute paths, prefer relative.
+        candidates = [
+            os.path.normpath(os.path.join(os.path.dirname(prev), path)),
+            path,
+        ]
+    # Try adding _ in front of the file for partials.
+    for candidate in candidates[:]:
+        if '/' in candidate:
+            candidates.insert(0, '/_'.join(candidate.rsplit('/', 1)))
+        else:
+            candidates.insert(0, '_' + candidate)
+    # Try adding extensions.
+    for candidate in candidates[:]:
+        for ext in ['.scss', '.sass', '.css']:
+            candidates.append(candidate + ext)
+    for finder in get_finders():
+        # We can't use finder.find() because we need the prefixes.
+        for storage_filename, storage in finder.list([]):
+            prefix = getattr(storage, "prefix", "")
+            filename = os.path.join(prefix, storage_filename)
+            if filename in candidates:
+                return [(filename, storage.open(storage_filename).read())]
+    # Additional includes are just regular directories.
+    for directory in ADDITIONAL_INCLUDE_PATHS:
+        for candidate in candidates:
+            filename = os.path.join(directory, candidate)
+            if os.path.exists(filename):
+                return [(candidate, open(filename).read())]
+    # Nothing was found.
+    return None
+
+
 def get_include_paths():
     """
     Generate a list of include paths that libsass should use to find files
@@ -110,11 +153,11 @@ def compile(**kwargs):
     kwargs = kwargs.copy()
     if PRECISION is not None:
         kwargs['precision'] = PRECISION
-    kwargs['include_paths'] = (kwargs.get('include_paths') or []) + get_include_paths()
 
     custom_functions = CUSTOM_FUNCTIONS.copy()
     custom_functions.update(kwargs.get('custom_functions', {}))
     kwargs['custom_functions'] = custom_functions
+    kwargs['importers'] = [(0, importer)]
 
     if SOURCEMAPS and kwargs.get('filename', None):
         # We need to pass source_map_file to libsass so it generates
